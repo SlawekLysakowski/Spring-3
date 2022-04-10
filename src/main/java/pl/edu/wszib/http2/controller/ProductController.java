@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import pl.edu.wszib.http2.service.ProduktService;
+import pl.edu.wszib.http2.service.model.Filtr;
 import pl.edu.wszib.http2.service.model.Produkt;
 import pl.edu.wszib.http2.service.model.Profile;
 
@@ -27,14 +28,16 @@ public class ProductController {
 
 
     @GetMapping("/list")
-    public String list(Model model) {
-//        Produkt produkt = new Produkt();
-//        produkt.setCena(3.0f);
-//        produkt.setIlosc(56);
-//        produkt.setNazwa("batonik");
-//        produktService.create(produkt);
-        model.addAttribute("produkty", produktService.list());  //przekaz list
-        return "list-product"; //nazwa widoku
+    public String list(Filtr filtr, Model model) {
+        if (filtr == null) {
+            model.addAttribute("produkty", produktService.list());  //przekaz list
+            model.addAttribute("filtr", new Filtr());
+            return "list-product"; //nazwa widoku
+        } else {
+            model.addAttribute("produkty", produktService.list(filtr));
+            model.addAttribute("filtr", filtr);
+            return  "list-product";
+        }
     }
     @GetMapping("/create")
     public String create(Model model) {

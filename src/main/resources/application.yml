@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    username: lysakows
+    password: Poland11!
+    url: jdbc:sqlserver://morfeusz.wszib.edu.pl:1433;databaseName=lysakows
+  sql:
+    init:
+      mode: always
+  flyway:
+    user: lysakows
+    password: Poland11!
+    url: jdbc:sqlserver://morfeusz.wszib.edu.pl:1433;databaseName=lysakows
+    locations: classpath:db/migrations
+    enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

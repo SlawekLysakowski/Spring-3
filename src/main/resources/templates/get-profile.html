@@ -18,13 +18,19 @@
                 <a class="btn btn-secondary" th:href="@{/profile/list}">Powrót</a>
             </div>
         </div>
-        <div class="row" style="height: 200px">
-            <img class="img-thumbnail" style="height: 200px; width: 200px" th:src="@{/profile/zdjecie(id=${profile.id})}"/>
-        </div>
         <div class="row">
             <div class="col-3">Id :</div>
             <div class="col-9">
                 <p th:text="${profile.id}"></p>
+            </div>
+        </div>
+        <div class="row" style="height: 200px">
+            <img class="img-thumbnail" style="height: 200px; width: 200px" th:src="@{/profile/zdjecie(id=${profile.id})}"/>
+        </div>
+        <div class="row">
+            <div class="col-3">Plec :</div>
+            <div class="col-9">
+                <p th:text="${profile.plec}"></p>
             </div>
         </div>
         <div class="row">

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-primary" th:href="@{/profile/create}">Stwórz</a>
+    <a class="btn btn-primary" th:href="@{/profile/create}">Create</a>
     <a class="btn btn-primary" th:each="p : ${plcie}" th:href="@{/profile/list(plec=${p})}" th:text="'Pokaz ' + ${p}"></a>
     <table class="table">
         <thead>

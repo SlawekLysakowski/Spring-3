@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vocab Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Vocab:</h2>
+        <div class="row">
+            <div class="col-3">Akcje :</div>
+            <div class="col-9">
+                <a class="btn btn-warning" th:href="@{/vocab/update(id=${vocab.id})}">Edytuj</a>
+                <a class="btn btn-danger" th:href="@{/vocab/delete(id=${vocab.id})}">Usuń</a>
+                <a class="btn btn-secondary" th:href="@{/vocab/list}">Powrót</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Id :</div>
+            <div class="col-9">
+                <p th:text="${vocab.id}"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">japanese :</div>
+            <div class="col-9">
+                <p th:text="${vocab.japanese}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">korean :</div>
+            <div class="col-9">
+                <p th:text="${vocab.korean}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Polish :</div>
+            <div class="col-9">
+                <p th:text="${vocab.polish}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">English :</div>
+            <div class="col-9">
+                <p th:text="${vocab.english}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
